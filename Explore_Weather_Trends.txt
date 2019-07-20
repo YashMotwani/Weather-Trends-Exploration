@@ -1,0 +1,7 @@
+/*Query/*
+
+SELECT cd.year, cd.city, cd.country, COALESCE(cd.avg_temp, 0) AS city_avg, gd.avg_temp AS global_avg
+FROM city_data cd
+JOIN global_data gd
+ON cd.year = gd.year
+WHERE cd.city = 'Agra' AND cd.year BETWEEN '1800' AND '2018'
